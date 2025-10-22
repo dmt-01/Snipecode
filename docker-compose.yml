@@ -4,10 +4,10 @@ services:
     image: adminer
     restart: on-failure
     ports:
-      - ${ADMINER_PORT}
+      - "${ADMINER_PORT}:8080"
 
   db:
-    image: postgres:18
+    image: postgres:18.0-alpine3.21
     restart: on-failure
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -26,9 +26,8 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - ./backend:/app
-      - /app/node_modules
     ports:
-      - ${BACKEND_PORT}
+      - "${BACKEND_PORT}:3000"
 
   frontend:
     restart: on-failure
@@ -39,6 +38,5 @@ services:
       - VITE_API_URL=${VITE_API_SERVER}
     volumes:
       - ./frontend:/app
-      - /app/node_modules
     ports:
-      - ${FRONTEND_PORT}
+      - "${FRONTEND_PORT}:5143"

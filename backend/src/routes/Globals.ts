@@ -3,7 +3,7 @@ import { GlobalsController } from "../controller/GlobalsController";
 
 export const globalsRouter = Router();
 
-globalsRouter.get("/test", (req, res) => {
+globalsRouter.get("/users", async (req, res) => {
   const controller = new GlobalsController(req, res);
-  controller.findAll();
+  await controller.findAll();
 });

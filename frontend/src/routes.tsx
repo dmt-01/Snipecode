@@ -4,7 +4,7 @@ import Homepage from "./components/pages/HomePage";
 function Router() {
   return (
     <Routes>
-      <Route path="/confirmation" element={<Homepage />} />
+      <Route path="/" element={<Homepage />} />
     </Routes>
   );
 }

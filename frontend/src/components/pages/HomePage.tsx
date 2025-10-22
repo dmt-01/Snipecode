@@ -1,4 +1,4 @@
-import { useGetAllUsers } from "../../core/usegetAllUsers";
+import { useGetAllUsers } from "../../core/useGetAllUsers";
 
 interface Users {
   id_users: number;
@@ -22,7 +22,7 @@ function Homepage() {
     <div>
       <h1>Liste des utilisateurs</h1>
       <ul>
-        {data?.data.map((user) => (
+        {data?.data?.map((user) => (
           <li key={user.id_users}>
             {user.pseudo} — {user.email}
           </li>

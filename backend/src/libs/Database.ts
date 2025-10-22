@@ -8,7 +8,7 @@ export class Database {
     if (!Database.pool) {
       const envFile = `.env.${process.env.NODE_ENV || "dev"}`;
 
-      dotenv.config({ path: envFile });
+      dotenv.config({ path: ".env" });
 
       Database.pool = new Pool({
         user: process.env.POSTGRES_USER,
