@@ -1,0 +1,44 @@
+services:
+
+  adminer:
+    image: adminer
+    restart: on-failure
+    ports:
+      - ${ADMINER_PORT}
+
+  db:
+    image: postgres:18
+    restart: on-failure
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
+  backend:
+    restart: on-failure
+    build: ./backend
+    env_file:
+      - .env.dev
+    environment:
+      - PGUSER=${POSTGRES_USER}
+      - PGPASSWORD=${POSTGRES_PASSWORD}
+      - PGHOST=${POSTGRES_HOST}
+      - PGDATABASE=${POSTGRES_DB}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    ports:
+      - ${BACKEND_PORT}
+
+  frontend:
+    restart: on-failure
+    build: ./frontend
+    env_file:
+      - .env.dev
+    environment:
+      - VITE_API_URL=${VITE_API_SERVER}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - ${FRONTEND_PORT}
