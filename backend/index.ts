@@ -2,7 +2,7 @@ import { createRequire } from "node:module";
 import cookieParser from "cookie-parser";
 import { fileURLToPath } from "node:url";
 import type { CorsOptions } from "cors";
-import router from "./routes";
+import router from "./src/routes";
 import Express from "express";
 import path from "node:path";
 
