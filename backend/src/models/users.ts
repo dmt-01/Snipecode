@@ -1,24 +1,24 @@
 interface UsersTypeRow {
   id_users: number;
-  mdp: string;
+  password: string;
   pseudo: string;
   email: string;
 }
 
 export class Users {
   protected id_users: number;
-  protected mdp: string;
+  protected password: string;
   protected pseudo: string;
   protected email: string;
 
-  constructor(id_users: number, mdp: string, pseudo: string, email: string) {
+  constructor(id_users: number, password: string, pseudo: string, email: string) {
     this.id_users = id_users;
-    this.mdp = mdp;
+    this.password = password;
     this.pseudo = pseudo;
     this.email = email;
   }
 
   static fromRow(row: UsersTypeRow): Users {
-    return new Users(row.id_users, row.mdp, row.pseudo, row.email);
+    return new Users(row.id_users, row.password, row.pseudo, row.email);
   }
 }

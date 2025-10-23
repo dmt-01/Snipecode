@@ -1,13 +1,16 @@
-FROM node:23-alpine3.21
+FROM node:22-alpine3.22
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
 
 COPY ./ ./
 
-EXPOSE 5143
+EXPOSE 5173
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5143"]
+CMD ["pnpm", "dev", "--host", "0.0.0.0", "--port", "5143"]
