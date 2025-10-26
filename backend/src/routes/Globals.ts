@@ -7,3 +7,8 @@ globalsRouter.get("/users", async (req, res) => {
   const controller = new GlobalsController(req, res);
   await controller.findAll();
 });
+
+globalsRouter.get("/snippets/like", async (req, res) => {
+  const controller = new GlobalsController(req, res);
+  await controller.LikeSnippet();
+});

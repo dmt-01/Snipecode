@@ -1,8 +1,8 @@
 import { Repository } from "../libs/Repository";
-import { Users } from "../models/users";
+import { Token } from "../models/token";
 
-export class UserRepository extends Repository {
-  async findAllUsers(): Promise<Users[]> {
+export class TokenRepository extends Repository {
+  async findAllUsers(): Promise<Token[]> {
     const query = {
       name: "fetch-all-users",
       text: "SELECT * FROM users",
@@ -11,7 +11,7 @@ export class UserRepository extends Repository {
     try {
       const result = await this.pool.query(query);
 
-      return result.rows.map((row) => Users.fromRow(row));
+      return result.rows.map((row) => Token.fromRow(row));
     } catch (error) {
       throw error;
     }
