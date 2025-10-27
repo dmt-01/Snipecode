@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users(
    id_users SERIAL PRIMARY KEY,
-   password VARCHAR(255)  NOT NULL,
+   password VARCHAR(100)  NOT NULL,
    pseudo VARCHAR(50) ,
    email VARCHAR(100)  NOT NULL UNIQUE
 );
@@ -16,7 +16,7 @@ CREATE TABLE snippet(
    title VARCHAR(50)  NOT NULL,
    language_snippet VARCHAR(50)  NOT NULL,
    tags VARCHAR(50) ,
-   text_snippet VARCHAR(250)  NOT NULL,
+   text_snippet TEXT  NOT NULL,
    visibility VARCHAR(50)  NOT NULL 
 );
 

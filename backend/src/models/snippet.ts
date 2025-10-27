@@ -1,11 +1,4 @@
-interface SnipetTypeRow {
-  id_snippet: number;
-  title: string;
-  language_snippet: string;
-  tags: string | null;
-  text_snippet: string;
-  visibility: string;
-}
+import { SnipetTypeRow } from "../types/types";
 
 export class Snippet {
   protected id_snippet: number;

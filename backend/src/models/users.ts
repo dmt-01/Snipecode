@@ -1,9 +1,4 @@
-interface UsersTypeRow {
-  id_users: number;
-  password: string;
-  pseudo: string;
-  email: string;
-}
+import { UsersTypeRow } from "../types/types";
 
 export class Users {
   protected id_users: number;

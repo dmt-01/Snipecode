@@ -1,8 +1,4 @@
-interface TokenTypeRow {
-  id_token: number;
-  dates: Date;
-  is_users: number;
-}
+import { TokenTypeRow } from "../types/types";
 
 export class Token {
   protected id_token: number;

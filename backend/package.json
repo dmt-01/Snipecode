@@ -13,7 +13,10 @@
     "build:all": "npm run build:css && npm run build:js",
     "build:js": "rollup -c",
     "build:css": "sass src/scss:public/css",
-    "watch:css": "sass --watch src/scss:public/css"
+    "watch:css": "sass --watch src/scss:public/css",
+    "db:reset": "node scripts/db_reset.js",
+    "db:populate": "node scripts/db_populate.js",
+    "db:all": "npm run db:reset && npm run db:populate"
   },
   "keywords": [],
   "author": "",

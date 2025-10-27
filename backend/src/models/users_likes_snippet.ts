@@ -1,7 +1,4 @@
-interface UsersLikesSnippetTypeRow {
-  id_users: number;
-  id_snippet: number;
-}
+import { UsersLikesSnippetTypeRow } from "../types/types";
 
 export class UsersLikesSnippet {
   protected id_users: number;

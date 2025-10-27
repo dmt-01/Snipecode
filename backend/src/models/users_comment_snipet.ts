@@ -1,8 +1,4 @@
-interface UsersCommentSnipetTypeRow {
-  id_users: number;
-  id_snippet: number;
-  comment: string;
-}
+import { UsersCommentSnipetTypeRow } from "../types/types";
 
 export class UsersCommentSnipet {
   protected id_users: number;

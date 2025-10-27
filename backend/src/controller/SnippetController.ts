@@ -26,6 +26,7 @@ export class SnippetController extends Controller {
         .json({ success: false, message: "Erreur serveur" });
     }
   }
+  
   public async insertSnippet() {
     try {
       const parseResult = createSnippetSchema.safeParse(this.request.body);

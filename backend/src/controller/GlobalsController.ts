@@ -26,6 +26,7 @@ export class GlobalsController extends Controller {
         .json({ success: false, message: "Erreur serveur" });
     }
   }
+  
   public async LikeSnippet() {
     try {
       const SnippetRepositorie = new SnippetRepository();
