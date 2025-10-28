@@ -1,4 +1,4 @@
-import { SnipetTypeRow } from "../types/types";
+import { SnippetTypeRow } from "../types/types";
 
 export class Snippet {
   protected id_snippet: number;
@@ -24,7 +24,7 @@ export class Snippet {
     this.visibility = visibility;
   }
 
-  static fromRow(row: SnipetTypeRow): Snippet {
+  static fromRow(row: SnippetTypeRow): Snippet {
     return new Snippet(
       row.id_snippet,
       row.title,

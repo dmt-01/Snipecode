@@ -1,6 +1,6 @@
 import { Controller } from "../libs/Controller";
 import { SnippetRepository } from "../repositories/SnippetRepository";
-import { UserRepository } from "../repositories/UsersRepository";
+import { UserRepository } from "../repositories/UserRepository";
 
 export class GlobalsController extends Controller {
   public async findAll() {

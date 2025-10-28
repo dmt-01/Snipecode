@@ -63,7 +63,7 @@ export class SnippetRepository extends Repository {
       COUNT(DISTINCT cs.id_comment) AS comment_count
       FROM snippet s
       LEFT JOIN users_likes_snippet uls ON s.id_snippet = uls.id_snippet
-      LEFT JOIN comment_snippet cs ON s.id_snippet = cs.id_snippet
+      LEFT JOIN users_comment_snippet cs ON s.id_snippet = cs.id_snippet
       WHERE s.visibility = 'public'
       GROUP BY s.id_snippet
       ORDER BY like_count, comment_count;`,
@@ -86,7 +86,7 @@ export class SnippetRepository extends Repository {
       COUNT(DISTINCT cs.id_comment) AS comment_count
       FROM snippet s
       LEFT JOIN users_likes_snippet uls ON s.id_snippet = uls.id_snippet
-      LEFT JOIN comment_snippet cs ON s.id_snippet = cs.id_snippet
+      LEFT JOIN users_comment_snippet cs ON s.id_snippet = cs.id_snippet
       WHERE s.visibility = 'private'
       GROUP BY s.id_snippet
       ORDER BY like_count, comment_count;`,
@@ -109,7 +109,7 @@ export class SnippetRepository extends Repository {
       COUNT(DISTINCT cs.id_comment) AS comment_count
       FROM snippet s
       LEFT JOIN users_likes_snippet uls ON s.id_snippet = uls.id_snippet
-      LEFT JOIN comment_snippet cs ON s.id_snippet = cs.id_snippet
+      LEFT JOIN users_comment_snippet cs ON s.id_snippet = cs.id_snippet
       WHERE s.id_user = $1
       GROUP BY s.id_snippet
       ORDER BY like_count DESC, comment_count DESC;`,
@@ -149,7 +149,7 @@ export class SnippetRepository extends Repository {
       const result = await this.pool.query(query);
   
       if (result.rows.length > 0) {
-        return result.rows[0];
+        return Snippet.fromRow(result.rows[0]);
       }
   
       return null;

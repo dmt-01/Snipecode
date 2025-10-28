@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS users_comment_snipecode CASCADE;
+DROP TABLE IF EXISTS users_comment_snippet CASCADE;
 DROP TABLE IF EXISTS users_likes_snippet CASCADE;
 DROP TABLE IF EXISTS token CASCADE;
 DROP TABLE IF EXISTS snippet CASCADE;

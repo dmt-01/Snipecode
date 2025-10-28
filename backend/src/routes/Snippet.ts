@@ -11,7 +11,7 @@ SnippetRouter.get("/snippets", async (req, res) => {
   const controller = new SnippetController(req, res);
   await controller.findAll();
 });
-
+////////////////////////////////////////////////
 SnippetRouter.get("/snippets/user/:id", async (req, res) => {
   const controller = new SnippetController(req, res);
   await controller.findAllSnippetByUserId();
@@ -27,11 +27,13 @@ SnippetRouter.get("/snippets/like/:id", async (req, res) => {
   await controller.findByLike();
 });
 
+////////////////////////////////////////////////
 SnippetRouter.get("/snippets/public", async (req, res) => {
   const controller = new SnippetController(req, res);
   await controller.findAllLikeCommentPublic();
 });
 
+////////////////////////////////////
 SnippetRouter.get("/snippets/private", async (req, res) => {
   const controller = new SnippetController(req, res);
   await controller.findAllLikeCommentPrivate();

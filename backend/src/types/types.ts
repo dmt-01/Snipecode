@@ -1,4 +1,4 @@
-export interface SnipetTypeRow {
+export interface SnippetTypeRow {
   id_snippet: number;
   title: string;
   language_snippet: string;

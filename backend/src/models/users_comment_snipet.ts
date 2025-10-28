@@ -1,7 +1,7 @@
 import { users_comment_snippetTypeRow } from "../types/types";
 
 
-export class users_comment_snippet {
+export class UsersCommentSnippet {
   protected id_users: number;
   protected id_snippet: number;
   protected comment: string;
@@ -12,8 +12,8 @@ export class users_comment_snippet {
     this.comment = comment;
   }
 
-  static fromRow(row: users_comment_snippetTypeRow): users_comment_snippet {
-    return new users_comment_snippet(row.id_users, row.id_snippet, row.comment);
+  static fromRow(row: users_comment_snippetTypeRow): UsersCommentSnippet {
+    return new UsersCommentSnippet(row.id_users, row.id_snippet, row.comment);
   }
 
   getIdUsers(): number {

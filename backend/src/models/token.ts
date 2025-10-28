@@ -23,7 +23,7 @@ export class Token {
     return this.dates;
   }
 
-  getIsUsers(): number {
+  getIdUsers(): number {
     return this.id_users;
   }
 }
