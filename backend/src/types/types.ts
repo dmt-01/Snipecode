@@ -10,10 +10,10 @@ export interface SnipetTypeRow {
 export interface TokenTypeRow {
   id_token: number;
   dates: Date;
-  is_users: number;
+  id_users: number;
 }
 
-export interface UsersCommentSnipetTypeRow {
+export interface users_comment_snippetTypeRow {
   id_users: number;
   id_snippet: number;
   comment: string;

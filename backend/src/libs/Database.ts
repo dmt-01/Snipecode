@@ -6,9 +6,10 @@ export class Database {
 
   static getPool(): Pool {
     if (!Database.pool) {
-      const envFile = `.env.${process.env.NODE_ENV || "dev"}`;
-
-      dotenv.config({ path: ".env" });
+      // Charge les variables d'environnement uniquement si tu exécutes hors Docker
+      if (process.env.NODE_ENV !== "production") {
+        dotenv.config();
+      }
 
       Database.pool = new Pool({
         user: process.env.POSTGRES_USER,

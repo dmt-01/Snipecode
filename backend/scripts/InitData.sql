@@ -27,7 +27,7 @@ CREATE TABLE token(
    FOREIGN KEY(id_users) REFERENCES users(id_users)
 );
 
-CREATE TABLE users_comment_snipecode(
+CREATE TABLE users_comment_snippet(
    id_users INTEGER,
    id_snippet INTEGER,
    comment VARCHAR(50) ,

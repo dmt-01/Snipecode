@@ -5,7 +5,7 @@ export class TokenRepository extends Repository {
   async findAllUsers(): Promise<Token[]> {
     const query = {
       name: "fetch-all-users",
-      text: "SELECT * FROM users",
+      text: "SELECT * FROM token",
     };
 
     try {

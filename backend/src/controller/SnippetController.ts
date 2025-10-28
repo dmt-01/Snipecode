@@ -26,6 +26,50 @@ export class SnippetController extends Controller {
         .json({ success: false, message: "Erreur serveur" });
     }
   }
+
+  public async findAllSnippetByUserId() {
+    try {
+      const userId = Number(this.request.params.id);
+
+      const snippetRepository = new SnippetRepository();
+      const snippets = await snippetRepository.allSnippetByUserId(userId);
+
+      this.response.json({
+        success: true,
+        data: snippets,
+      });
+    } catch (error) {
+      this.response
+        .status(500)
+        .json({ success: false, message: "Erreur serveur" });
+    }
+  }
+
+  public async findById() {
+    try {
+      const snippetId = Number(this.request.params.id);
+
+      const snippetRepository = new SnippetRepository();
+      const snippet = await snippetRepository.findSnippetById(snippetId);
+
+      if (!snippet) {
+        this.response.status(404).json({
+          success: false,
+          message: "Le snippet n'existe pas",
+        });
+        return;
+      }
+
+      this.response.json({
+        success: true,
+        data: snippet,
+      });
+    } catch (error) {
+      this.response
+        .status(500)
+        .json({ success: false, message: "Erreur serveur" });
+    }
+  }
   
   public async insertSnippet() {
     try {
@@ -59,6 +103,58 @@ export class SnippetController extends Controller {
         success: true,
         data: newSnippet,
       });
-    } catch (error) {}
+    } catch (error) {
+      this.response
+        .status(500)
+        .json({ success: false, message: "Erreur serveur" });
+    }
+  }
+
+  public async findByLike() {
+    try {
+      const snippetRepository = new SnippetRepository();
+      const snippets = await snippetRepository.findSnippetByLike();
+
+      this.response.json({
+        success: true,
+        data: snippets,
+      });
+    } catch (error) {
+      this.response
+        .status(500)
+        .json({ success: false, message: "Erreur serveur" });
+    }
+  }
+
+  public async findAllLikeCommentPublic() {
+    try {
+      const snippetRepository = new SnippetRepository();
+      const snippets = await snippetRepository.AllSnippetLikeCommentPublic();
+
+      this.response.json({
+        success: true,
+        data: snippets,
+      });
+    } catch (error) {
+      this.response
+        .status(500)
+        .json({ success: false, message: "Erreur serveur" });
+    }
+  }
+
+  public async findAllLikeCommentPrivate() {
+    try {
+      const snippetRepository = new SnippetRepository();
+      const snippets = await snippetRepository.AllSnippetLikeCommentPrivate();
+
+      this.response.json({
+        success: true,
+        data: snippets,
+      });
+    } catch (error) {
+      this.response
+        .status(500)
+        .json({ success: false, message: "Erreur serveur" });
+    }
   }
 }

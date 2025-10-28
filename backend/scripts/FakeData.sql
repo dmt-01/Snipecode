@@ -22,7 +22,7 @@ VALUES
 (NOW() - INTERVAL '30 minutes', 4),
 (NOW() - INTERVAL '5 days', 5);
 
-INSERT INTO users_comment_snipecode (id_users, id_snippet, comment)
+INSERT INTO users_comment_snippet (id_users, id_snippet, comment)
 VALUES
 (1, 3, 'Très utile pour débuter !'),
 (2, 1, 'Simple et efficace.'),

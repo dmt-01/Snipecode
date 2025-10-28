@@ -11,7 +11,7 @@ export class GlobalsController extends Controller {
       if (!users) {
         this.response.status(404).json({
           success: false,
-          message: "Le user n'existe pas",
+          message: "Aucun utilisateur trouvé",
         });
         return;
       }
