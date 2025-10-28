@@ -7,5 +7,4 @@ const router = Router();
 router.use("/api", globalsRouter);
 router.use("/api", SnippetRouter);
 
-
 export default router;
