@@ -24,7 +24,7 @@ export class UserRepository extends Repository {
   ): Promise<Users> {
     const query = {
       name: "create-new-user",
-      text: `INSERT INTO users (email, password, username)
+      text: `INSERT INTO users (email, password, pseudo)
              VALUES ($1, $2, $3)
              RETURNING *`,
       values: [email, password, username],

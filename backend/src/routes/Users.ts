@@ -5,7 +5,7 @@ const UsersRouter = Router();
 
 UsersRouter.get("/users", async (req, res) => {
   const controller = new UsersController(req, res);
-  await controller.findAll
+  await controller.findAll();
 });
 
 UsersRouter.post("/insertusers", async (req, res) => {
