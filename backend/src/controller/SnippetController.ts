@@ -1,6 +1,6 @@
-import { Controller } from "../libs/Controller";
 import { createSnippetSchema } from "../libs/schemaZod/schemaSnippet";
 import { SnippetRepository } from "../repositories/SnippetRepository";
+import { Controller } from "../libs/Controller";
 
 export class SnippetController extends Controller {
   public async findAll() {

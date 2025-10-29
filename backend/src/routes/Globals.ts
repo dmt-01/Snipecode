@@ -1,5 +1,5 @@
-import { Router } from "express";
 import { GlobalsController } from "../controller/GlobalsController";
+import { Router } from "express";
 
 export const globalsRouter = Router();
 

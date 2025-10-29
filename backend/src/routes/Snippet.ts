@@ -1,5 +1,5 @@
-import { Router } from "express";
 import { SnippetController } from "../controller/SnippetController";
+import { Router } from "express";
 
 const SnippetRouter = Router();
 SnippetRouter.post("/insertsnippets", async (req, res) => {

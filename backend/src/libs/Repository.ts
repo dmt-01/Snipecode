@@ -1,5 +1,5 @@
-import { Pool } from "pg";
 import { Database } from "../libs/Database";
+import { Pool } from "pg";
 
 export abstract class Repository {
   protected pool: Pool;
